@@ -4,7 +4,12 @@
 팀 프로젝트는 Github PR(Pull Request)을 이용하여 진행합니다.  
 아래 사항을 잘 따라와 주시면 감사하겠습니다.
 
-## Step
+## 참고 자료
+혹 자바스크립트 코드나 기타 내용에 대한 참고가 필요하시다면 아래 링크를 참조해 주세요.  
+[자바스크립트 기본기](https://github.com/issuebombom/nodejs_study_alone/blob/main/study_alone_basic.md)  
+[자바스크립트 웹개발 기본기](https://github.com/issuebombom/nodejs_study_alone/blob/main/study_alone_web.md)
+
+## 본격 Github 협업 툴 활용하기
 1. 해당 레포지토리를 git clone해서 각자의 로컬 PC에 가져옵니다.
 2. 레포지토리에서 issues에 들어가 TODO를 확인해 주세요.
 ![issues-exam](./img/issue_exam.png)
@@ -49,10 +54,14 @@ github툴 협업 시 업무 세부 순서는 아래와 같습니다.
 12. 만약 아래와 같이 Conflict가 발생했다면 해결이 필요합니다. (해결방법은 git 상세설명 페이지 참조)  
 ![conflicts-exam](./img/conflicts_exam.png)
 
-13. confilict까지 해결이 되었다면 다른 팀원들에게 코드리뷰를 받고, 프로젝트 Owner에게 승인(Approval)을 받으면 main 브랜치에 코드가 등록됩니다.
+13. confilict까지 해결이 되었다면 다른 팀원들에게 코드리뷰를 받고, 수정사항이 있다면 수정합니다.  
+- pull request는 각 업무당 최초에 한 번 생성합니다. 코드 수정 시에는 `git push origin 브랜치이름`만 해도 됩니다.
 
-14. 이제 main 브랜치의 코드가 변동되었기 때문에 다른 작업자들은 각자의 브랜치에서 `git pull origin main`을 또 진행해야 합니다. 이 과정에서 conflict가 발생할 수 있으며 이 또한 팀원과의 소통을 통해 해결해가야 합니다.
+14. 프로젝트 Owner에게 승인(Approval)을 받으면 main 브랜치에 코드가 등록됩니다.
 
+15. 이제 main 브랜치의 코드가 변동되었기 때문에 다른 작업자들은 각자의 브랜치에서 `git pull origin main`을 또 진행해야 합니다. 이 과정에서 conflict가 발생할 수 있으며 이 또한 팀원과의 소통을 통해 해결해가야 합니다.
+
+16. 새로운 업무를 맡을 때 마다 위 작업을 반복합니다.
 
 
 ## Git 컨벤션 참고
