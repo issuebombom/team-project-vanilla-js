@@ -7,7 +7,8 @@
 ## 참고 자료
 혹 자바스크립트 코드나 기타 내용에 대한 참고가 필요하시다면 아래 링크를 참조해 주세요.  
 [자바스크립트 기본기](https://github.com/issuebombom/nodejs_study_alone/blob/main/study_alone_basic.md)  
-[자바스크립트 웹개발 기본기](https://github.com/issuebombom/nodejs_study_alone/blob/main/study_alone_web.md)
+[자바스크립트 웹개발 기본기](https://github.com/issuebombom/nodejs_study_alone/blob/main/study_alone_web.md)  
+[코멘트 작성 구현 참조](https://github.com/issuebombom/basic_website_project_02)
 
 ## 본격 Github 협업 툴 활용하기
 1. 해당 레포지토리를 git clone해서 각자의 로컬 PC에 가져옵니다.
