@@ -2,7 +2,7 @@
 name: Document request
 about: 문서 편집 시 해당 탬플릿 사용
 title: "[docs]"
-labels: ''
+labels: documentation
 assignees: issuebombom
 
 ---

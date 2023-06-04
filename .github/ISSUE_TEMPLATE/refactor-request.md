@@ -2,7 +2,7 @@
 name: Refactor request
 about: 리팩토링 적용 시 해당 탬플릿 사용
 title: "[refactor]"
-labels: ''
+labels: refactor
 assignees: issuebombom
 
 ---
