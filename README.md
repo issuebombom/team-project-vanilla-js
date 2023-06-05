@@ -2,7 +2,6 @@
 
 ## 개요
 팀 프로젝트는 Github PR(Pull Request)을 이용하여 진행합니다.  
-위 예시는 Collaborators를 대상으로 한 협업 방식의 예시입니다.
 아래 사항을 잘 따라와 주시면 감사하겠습니다.  
 
 ## 참고 자료
@@ -11,7 +10,7 @@
 [자바스크립트 웹개발 기본기](https://github.com/issuebombom/nodejs_study_alone/blob/main/study_alone_web.md)  
 [코멘트 작성 구현 참조](https://github.com/issuebombom/basic_website_project_02)
 
-## 본격 Github 협업 툴 활용하기
+## 본격 Github 협업 툴 활용하기 (Collaborators)
 1. 해당 레포지토리를 git clone해서 각자의 로컬 PC에 가져옵니다.
 2. 레포지토리에서 issues에 들어가 TODO를 확인해 주세요.
 ![issues-exam](./img/issue_exam.png)
@@ -76,3 +75,28 @@ github툴 협업 시 업무 세부 순서는 아래와 같습니다.
 |docs|문서 (문서 추가, 수정, 삭제)|  
 |test|테스트 (테스트 코드 추가, 수정, 삭제: 비즈니스 로직에 변경 없음)|  
 |chore|기타 변경사항 (빌드 스크립트 수정 등)|
+
+
+## 본격 Github 협업 툴 활용하기 (Contributor)
+컨트리뷰터는 github의 `Fork` 기능을 사용합니다.  
+![fork-exam](./img/fork_exam.png)  
+협업하고자 하는 레포지토리를 본인의 레포지토리로 가져와서 작업 후 수정 사항 변경 요청을 레포지토리 주인에게 허락을 구하는 방식으로 진행됩니다.
+
+Contributor로서 github툴 협업에 참여 시 업무 세부 순서는 아래와 같습니다.
+
+`Fork`를 통해 받아온 레포지토리가 본인의 레포지토리에 설치되었을 것입니다.  
+만약 본인이 `issuebombom`이라는 계정의 주인이고, `bombom/test-repo`라는 프로젝트를 Fork했다면 `issuebombom/test-repo`라는 fork 레포지토리가 생성되었을 것입니다. 그 레포지토리를 git clone합니다. 이후로도 예시와 같은 상황을 가정하겠습니다. (반드시 본인의 레포지토리에 저장된 Fork떠온 레포지토리여야 합니다.)
+
+1. `git remote add upstream bombom/test-repo` 를 입력해서 Fork뜬 레포지토리와 원본 레포지토리를 연결하는 작업을 합니다. 이는 원본 레포지토리 업데이트에 따른 로컬 환경의 최신화를 위함입니다.
+2. 신규 기능 구현을 위해 `git checkout -b 브랜치이름` 으로 생성합니다.
+3. 구현 완료 후 add, commit, `git push origin 브랜치이름`을 통해 push합니다.
+4. 본인의 레포지토리로 가서 PR 생성이 가능한지 확인 후 PR 생성합니다. 여기서 생성하면 원본 레포지토리 주인이 PR을 확인할 수 있습니다.
+5. 또 다른 작업을 시작한다면 새로운 브랜치 생성 및 `git fetch upstream`을 통해 원본 레포지토리의 최신 main 브랜치 코드를 받습니다. 이는 다른 contributor 또는 프로젝트 관계자로 인해 코드가 업데이트 되어 로컬 환경과 sync가 맞지 않을 수 있기 때문입니다.
+6. 작업을 시작하고자 하는 브랜치에 위치한 상태에서 `git merge upstream/main`을 입력하면 원본 main 브랜치의 내용으로 최신화 됩니다.
+7. 이후 작업 및 반복 과정은 동일합니다.
+
+코드 리뷰 과정은 collaborator와 동일합니다. 차이점은 contributor에게는 merge 권한이 없습니다. 그러므로 원본 레포지토리의 Owner 혹은 collaborator가 허락하지 않으면 main 브랜치에 merge할 수 없습니다.  
+만약 팀프로젝트를 owner와 contributor로 구성한다면 owner의 허락 없이 merge가 진행되지 못하므로 프로젝트 진행 속도가 더뎌질 수 있습니다.  
+반면 owner와 collaborator로 구성된다면 approval 설정 기준이 낮다면 누구나 쉽게 merge가 가능하므로 코드 관리가 제대로 이뤄지지 않을 수 있습니다.  
+
+그러므로 collaborator와 contributor는 각각 장단점이 있습니다.
