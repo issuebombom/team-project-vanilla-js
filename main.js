@@ -69,6 +69,7 @@ getMovie().then((data) => {
   createCards(data.results);
 });
 
+//페이지 전환
 const main = document.querySelector("#main")
 const detail = document.querySelector("#detail")
 
@@ -77,4 +78,31 @@ function begin(){
     detail.style.display = "block"
 }
 
-//${info.id}
+//클릭한 영화 ${info.id} 받아서 detail로 전달, 수정 필요
+function myFunction() {
+  document.getElementById("field2").value = document.getElementById("field1").value;
+}
+
+//전환 페이지에서 클릭한 카드 표시
+const recreateCards = (movies) => {
+  const cardBox = document.querySelector('.recard-box');
+  cardBox.innerHTML = ''; // 카드 생성 전 비워주기
+
+  movies.forEach((info) => {
+    // 영화 정보 HTML 생성
+    let temp_html = `<div id="cards" class="card" onclick="${info.id}">
+              <img src="https://www.themoviedb.org/t/p/w500/${info.poster_path}" alt="...">
+              <div class="card-body">
+                <h4 class="title">${info.title}</h4>
+                <p class="contents">${info.overview}</p>
+                <p class="rate">평점 : ${info.vote_average}</p>
+              </div>
+            </div>`;
+    cardBox.innerHTML += temp_html;
+  });
+};
+
+// 클릭한 영화 카드 표시(${info.id}에 해당하는 데이터만 출력, 수정 필요)
+getMovie().then((data) => {
+  recreateCards(data.results);
+});
