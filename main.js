@@ -52,7 +52,7 @@ const createCards = (movies) => {
 
   movies.forEach((info) => {
     // 영화 정보 HTML 생성
-    let temp_html = `<div id="cards" class="card" onclick="alert('영화 id: ${info.id}')">
+    let temp_html = `<div id="cards" class="card" onclick="js:begin()">
               <img src="https://www.themoviedb.org/t/p/w500/${info.poster_path}" alt="...">
               <div class="card-body">
                 <h4 class="title">${info.title}</h4>
