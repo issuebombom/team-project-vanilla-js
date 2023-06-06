@@ -31,9 +31,24 @@
   </div>
   </section>
   <section id="detail">
-    <p>test</p>
+    <div class = "header">
+      <h1>내가 클릭한 영화</h1>
+        <div class="search-bax">
+          <input type="text" class ="search-input" id= "searchinput" placeholder="영화평을 입력하세요" autofocus />
+          <button type="submit" class ="search-btn"id= "searchbtn" >등록</button>
+      </div>
+    </div>
+    <div class = "card-box">
+      <div id="cards" class = "card">
+        <img src="" alt = "...">
+        <div class="card-body">
+          <h4 class="title">영화 제목</h4>
+          <p class="contents">내용</p>
+          <p class="rate">평점</p>
+        </div>
+      </div>
+    </div>
   </section>
 </body>
 <script src="main.js"></script>
-<script src="detail.js"></script>
 </html>
