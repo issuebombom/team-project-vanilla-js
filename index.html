@@ -2,26 +2,24 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="detail.css"/>
 </head>
 
 <body>
-  <section id = "main">
-  <div class = "header">
+  <div class="header">
     <h1>TOP RATE MOVIES</h1>
-      <div class="search-bax">
-        <input type="text" class ="search-input" id= "searchinput" placeholder="제목을 검색하세요" autofocus />
-        <button type="submit" class ="search-btn"id= "searchbtn" >검색</button>
+    <div class="search-bax">
+      <input type="text" class="search-input" id="searchinput" placeholder="제목을 검색하세요" autofocus />
+      <button type="submit" class="search-btn" id="searchbtn">검색</button>
     </div>
   </div>
-  <div class = "card-box">
-    <div id="cards" class = "card">
-      <img src="" alt = "...">
+  <div class="card-box">
+    <div id="cards" class="card">
+      <img src="" alt="...">
       <div class="card-body">
         <h4 class="title">영화 제목</h4>
         <p class="contents">내용</p>
@@ -29,27 +27,22 @@
       </div>
     </div>
   </div>
-  </section>
-  <!-- 영화 클릭 후 페이지 -->
-  <section id="detail">
-    <div class = "header">
-      <h1>내가 클릭한 영화</h1>
-        <div class="search-bax">
-          <input type="text" class ="search-input" id= "searchinput" placeholder="영화평을 입력하세요" autofocus />
-          <button type="submit" class ="search-btn"id= "searchbtn" >등록</button>
+  <div id="modal">
+    <div class="modal-content">
+      <img src="" alt="..." />
+      <div>
+        <h3>영화 제목</h3>
+        <form class="post-form">
+          <input type="text" placeholder="닉네임을 입력">
+          <input type="password" placeholder="패스워드 입력">
+          <input type="text" placeholder="리뷰를 남겨주세요">
+          <button id="review">입력</button>
+          <button id="close-modal">닫기</button>
+        </form>
       </div>
     </div>
-    <div class = "recard-box">
-      <div id="cards" class = "card">
-        <img src="" alt = "...">
-        <div class="card-body">
-          <h4 class="title">영화 제목</h4>
-          <p class="contents">내용</p>
-          <p class="rate">평점</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
+  <script src="main.js"></script>
 </body>
-<script src="main.js"></script>
+
 </html>
