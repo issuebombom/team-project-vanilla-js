@@ -3,7 +3,7 @@ const options = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNWRhZWI2NjdiNjQ1ODM4ODQ2ZWEyOGMwNzQzNzUzOCIsInN1YiI6IjY0NzViNGJkOTYzODY0MDExODQ4MDRlMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bbqTe_5cI94Uru0gj8qIpcyM0w1TykKirsKz6AtEnV8'
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiOTM2NWEzNmZhNmQwMmFlYTFmMzEyZjkwNmQzMTJlZCIsInN1YiI6IjY0NzViNGJkOTYzODY0MDExODQ4MDRlMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Kof3JjFhDwtfeYITdsJhMA4XedswNta1T8HVSunc7Sw'
   }
 };
 const getMovie = async () => {
