@@ -8,7 +8,7 @@ assignees: issuebombom
 ---
 
 # Description
-리팩토링 구현에 대한 설명을 작성해 주세요.
+리팩토링 구현에 대한 설명을 작성해 주세요.
 
 # TODO
 - [ ] 할 일 1
