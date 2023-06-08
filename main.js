@@ -163,8 +163,8 @@ const postHandler = (movieId) => {
       return;
     }
 
-    if(password.length < 8) {
-      alert("패스워드를 8자리 이상 입력해주세요.");
+    if(password.length < 4) {
+      alert("패스워드를 4자리 이상 입력해주세요.");
       return;
     }
 
