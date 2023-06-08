@@ -168,11 +168,11 @@ const postHandler = (movieId) => {
       return;
     }
 
-    if(comment === "" || comment.includes(" ")) {
-      alert("공백을 제외한 리뷰를 남겨주세요.")
+    if(comment === "") {
+      alert("리뷰를 한 글자 이상 남겨주세요.")
       return;
     }
-    
+
     postReview(movieId, nickname, password, comment); // 리뷰정보 저장
     spreadReview(movieId); // 수정 후 리뷰 다시 뿌리기
   });
