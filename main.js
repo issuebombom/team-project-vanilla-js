@@ -57,8 +57,6 @@ const createCards = (movies) => {
                       <img src="https://www.themoviedb.org/t/p/w500/${movieInfo.poster_path}" alt="${movieInfo.id}">
                       <div class="card-body">
                         <h4 class="title">${movieInfo.title}</h4>
-                        <p class="contents">${movieInfo.overview}</p>
-                        <p class="rate">평점 : ${movieInfo.vote_average}</p>
                       </div>
                     </div>
                     `;
@@ -75,16 +73,23 @@ const openModal = (movies, movieId) => {
 
   // 모달 내용 업데이트
   modalContent.innerHTML = `<img src="https://www.themoviedb.org/t/p/w500/${movieInfo.poster_path}" alt="${movieInfo.id}">
-                              <h3>${movieInfo.title}</h3>
+                              
+                              <div class="detail-body">
+                                <div class="detitle">${movieInfo.title}</div>
+                                <div class="contents">${movieInfo.overview}</div>
+                                <div class="date">개봉일 : ${movieInfo.release_date}</div>
+                                
+                                <div class="rate">평점 : ${movieInfo.vote_average}</div>
+                              </div>
                               <form class="post-form">
-                                <input type="text" name="nick-name" placeholder="닉네임을 입력">
-                                <input type="password" name="password" placeholder="패스워드 입력">
-                                <input type="text" name="content" placeholder="리뷰를 남겨주세요">
+                                <input type="text" name="nick-name" class="nick-name" placeholder="닉네임을 입력">
+                                <input type="password" name="password" class="password" placeholder="패스워드 입력">
+                                <input type="text" name="content" class="content" placeholder="리뷰를 남겨주세요">
                                 <button type="submit" id="review">입력</button>
                                 <button type="button" id="close-modal">닫기</button>
+                                <div class="review-box">
+                                </div>
                               </form>
-                              <div class="review-box">
-                              </div>
                               `;
 
   // 리뷰 뿌리기
@@ -152,10 +157,12 @@ const postHandler = (movieId) => {
     let result = [];
     for (tag of event.target) {
       result.push(tag.value);
+      tag.value = "";
     }
     let [nickname, password, comment] = result;
     postReview(movieId, nickname, password, comment); // 리뷰정보 저장
     spreadReview(movieId); // 수정 후 리뷰 다시 뿌리기
+
   });
 };
 
@@ -175,7 +182,7 @@ const spreadReview = (movieId) => {
   const reviewBox = document.querySelector('.review-box');
 
   if (localStorage.getItem(movieId) === null) {
-    reviewBox.innerHTML = `<h2>댓글이 없습니다.</h2>`;
+    reviewBox.innerHTML = `<h2 class = "nocomments>댓글이 없습니다.</h2>`;
     return;
   }
   const reviewArray = JSON.parse(localStorage.getItem(movieId));
@@ -183,8 +190,10 @@ const spreadReview = (movieId) => {
   reviewBox.innerHTML = reviewArray.reduce((accumulation, eachData) => {
     let { nickname, comment } = eachData;
     return accumulation + `
-              <h3 class="nick-name">닉네임: ${nickname}</h3>
-              <p class="comment">내용: ${comment}</p>
+            <div class = room>
+              <h3 class="nick-names">닉네임: ${nickname}</h3>
+              <p class="comments">내용: ${comment}</p>
+            </div>
             `;
   }, "");
 };
