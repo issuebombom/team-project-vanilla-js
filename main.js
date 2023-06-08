@@ -17,10 +17,10 @@ const getMovies = async () => {
   return movies;
 };
 
-// 영화 필터링 함수(영화 타이틀을 소문자로 변경하여 검색 키워드가 타이틀의 포함유무 확인)
+// 영화 필터링 함수(영화 타이틀을 대소문자 상관없이 검색 키워드가 타이틀의 포함유무 확인)
 const filteringMovies = (movies, keyword) => {
-  const filteredMovies = movies.filter((movieInfo) => movieInfo.title.toLowerCase().includes(keyword)
-  );
+  const reg = new RegExp(keyword, 'i');
+  const filteredMovies = movies.filter((movieInfo) => reg.test(movieInfo.title));
   return filteredMovies;
 };
 
