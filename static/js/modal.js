@@ -36,6 +36,7 @@ const openModal = (movies, movieId) => {
   // 모달 창 열기
   modal.style.display = 'block';
   document.body.style.overflow = 'hidden';
+  // document.body.style.backdropFilter = 'blur(5px)';
 
   // 모달 창 닫기
   const closeModal = document.getElementById('close-modal');
@@ -43,8 +44,6 @@ const openModal = (movies, movieId) => {
     modal.style.display = 'none';
     document.body.style.overflow = 'auto';
   });
-  // 리뷰 포스팅 핸들러 등록
-  // postReviewHandler(movieId);
 };
 
 export { openModal };
