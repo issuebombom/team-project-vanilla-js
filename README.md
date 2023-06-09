@@ -86,8 +86,9 @@ localStorage는 오브젝트처럼 key, value 형태로 데이터를 저장하�
 - [x] localStorage에 적재  
 
 [4] Pull Request 사용한 협업  
-- [x] 완료  
-![team-play-example](./img/team_play_exam.png)
+- [x] 완료 (issues, project 활용)  
+![team-play-example](./img/team_play_exam.png)  
+![project-example](./img/project_exam.png)
 
 [5] Validation check  
 - [x] 영화 검색 시 대소문자 상관 없이 검색 가능  
