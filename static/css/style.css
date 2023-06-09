@@ -21,14 +21,6 @@ input {
   padding: 30px 0;
 }
 
-.search-box {
-  width: 345px;
-  height: 40px;
-  display: flex;
-  border: 1px solid #e6e6fa;
-  padding: 20px 0;
-}
-
 .search-input {
   font-size: 24;
   width: 290px;
