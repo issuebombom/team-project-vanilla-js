@@ -1,5 +1,6 @@
 // 영화 목록 데이터 가져오기
 import { events } from './events.js';
+import { movieCardHTML } from './innerHtml.js';
 
 const getMovies = async () => {
   const options = {
@@ -21,12 +22,29 @@ const getMovies = async () => {
 
 // 영화 필터링 함수(영화 타이틀을 대소문자 상관없이 검색 키워드가 타이틀의 포함유무 확인)
 const filteringMovies = (movies, keyword) => {
-  const reg = new RegExp(keyword, 'i');
-  const filteredMovies = movies.filter((movieInfo) =>
-    reg.test(movieInfo.title)
-  );
+  const re = new RegExp(keyword, 'i');
+  // 필터링
+  const filteredMovies = new Array;
+  let i = 0;
+  // (do while ver.)
+  do {
+    if (re.test(movies[i].title)) {
+      filteredMovies.push(movies[i]);
+    }
+    i++;
+  } while (i !== movies.length);
   return filteredMovies;
 };
+  // (while ver.)
+  // while (true) {
+  //   if (i === movies.length) {
+  //     break;
+  //   } else if (re.test(movies[i].title)) {
+  //     filteredMovies.push(movies[i]);
+  //   }
+  //   i++;
+  // };
+  // return filteredMovies;
 
 // 영화 카드 생성
 const createCards = (movies) => {
@@ -37,15 +55,8 @@ const createCards = (movies) => {
 
   movies.forEach((movieInfo) => {
     // 영화 정보 HTML 생성
-    let temp_html = `<div id="cards" class="card">
-                      <img src="https://www.themoviedb.org/t/p/w500/${movieInfo.poster_path}" alt="${movieInfo.id}">
-                      <div class="card-body">
-                        <h4 class="title">${movieInfo.title}</h4>
-                      </div>
-                    </div>
-                    `;
-
-    cardBox.innerHTML += temp_html; // 생성한 div태그에 temp_html
+    let temp_html = movieCardHTML(movieInfo);
+    cardBox.innerHTML += temp_html;
   });
 };
 
@@ -56,7 +67,7 @@ const spreadMovies = async () => {
   events.searchMovieHandler();
   events.modalOpenHandler(movies);
 
-  return movies
+  return movies;
 };
 
 // 영화 검색 수행

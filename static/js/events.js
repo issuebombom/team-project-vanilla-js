@@ -41,22 +41,14 @@ const postReviewHandler = (movieId) => {
     }
     let [nickname, password, comment] = result;
 
-    if (nickname === '' || nickname.includes(' ')) {
-      alert('공백을 제외한 닉네임을 입력해주세요.');
-      return;
-    }
+    (nickname === '' || nickname.includes(' '))
+      ? alert('공백을 제외한 닉네임을 입력해주세요.')
+      : password.length < 4
+      ? alert('패스워드를 4자리 이상 입력해주세요.')
+      : comment === ''
+      ? alert('리뷰를 한 글자 이상 남겨주세요.')
+      : postReview(movieId, nickname, password, comment);  
 
-    if (password.length < 4) {
-      alert('패스워드를 4자리 이상 입력해주세요.');
-      return;
-    }
-
-    if (comment === '') {
-      alert('리뷰를 한 글자 이상 남겨주세요.');
-      return;
-    }
-
-    postReview(movieId, nickname, password, comment); // 리뷰정보 저장
     spreadReviews(movieId); // 수정 후 리뷰 다시 뿌리기
   });
 };
@@ -67,4 +59,4 @@ const events = {
   postReviewHandler
 };
 
-export {events}
+export { events };
