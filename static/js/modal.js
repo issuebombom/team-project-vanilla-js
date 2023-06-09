@@ -34,7 +34,7 @@ const openModal = (movies, movieId) => {
   events.postReviewHandler(movieId);
 
   // 모달 창 열기
-  modal.style.display = 'block';
+  modal.style.display = 'flex';
   document.body.style.overflow = 'hidden';
   // document.body.style.backdropFilter = 'blur(5px)';
 
